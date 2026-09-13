@@ -1,0 +1,25 @@
+KnK Firebase v24
+
+Project:
+- projectId: knk-konstruksi
+
+Sudah dikoneksikan:
+- Firebase App
+- Firestore: products, orders, users, banners, config/app
+- Firebase Storage: gambar katalog dan banner yang berupa data/base64 akan di-upload ke Storage
+- Analytics: aktif saat website dibuka melalui HTTP/HTTPS
+- Realtime sync: perubahan Firestore akan masuk ke browser tanpa reload
+- localStorage tetap dipakai sebagai fallback/offline cache
+
+PENTING:
+1. Di Firebase Console, buat/aktifkan Cloud Firestore.
+2. Aktifkan Firebase Storage.
+3. Firestore/Storage Rules harus mengizinkan aplikasi membaca/menulis data yang dibutuhkan.
+4. Untuk produksi, jangan gunakan rules terbuka. Gunakan Firebase Authentication + rules berbasis user/admin.
+5. Analytics umumnya tidak aktif jika index.html dibuka langsung dengan file://. Deploy ke Firebase Hosting/HTTPS.
+
+Firebase Hosting:
+- firebase.json dan .firebaserc sudah disertakan.
+- Jika Firebase CLI sudah terpasang:
+  firebase login
+  firebase deploy --only hosting
